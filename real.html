@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milan Real Estate | Premium Real Estate Ethiopia</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+        body[data-theme="light"] {
+            background-color: #ffffff;
+            color: #111827;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar to keep up the dark luxury premium aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dc2626;
+        }
+        body[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        body[data-theme="light"] nav,
+        body[data-theme="light"] header,
+        body[data-theme="light"] main,
+        body[data-theme="light"] section,
+        body[data-theme="light"] footer,
+        body[data-theme="light"] .theme-panel,
+        body[data-theme="light"] .theme-card {
+            background-color: #ffffff !important;
+            color: #111827 !important;
+        }
+
+        body[data-theme="light"] .bg-zinc-950,
+        body[data-theme="light"] .bg-zinc-900,
+        body[data-theme="light"] .bg-zinc-900\/80,
+        body[data-theme="light"] .bg-zinc-800,
+        body[data-theme="light"] .bg-black\/70,
+        body[data-theme="light"] .bg-black\/80,
+        body[data-theme="light"] .bg\[\#0a0a0a\],
+        body[data-theme="light"] .bg\[\#0b0b0b\] {
+            background-color: #ffffff !important;
+        }
+
+        body[data-theme="light"] .border-zinc-900,
+        body[data-theme="light"] .border-zinc-800,
+        body[data-theme="light"] .border-zinc-700 {
+            border-color: #e5e7eb !important;
+        }
+
+        body[data-theme="light"] .text-white,
+        body[data-theme="light"] .text-zinc-300,
+        body[data-theme="light"] .text-zinc-400,
+        body[data-theme="light"] .text-zinc-500,
+        body[data-theme="light"] .text-zinc-600 {
+            color: #111827 !important;
+        }
+    </style>
+</head>
+<body class="text-white antialiased min-h-screen selection:bg-red-600 selection:text-white">
+
+    <!-- --- NAVBAR --- -->
+    <nav class="border-b border-zinc-800 bg-[#0a0a0a]/90 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <!-- Logo: Letter M + Luxury House -->
+            <div class="flex items-center justify-center bg-gradient-to-br from-red-600 to-rose-500 rounded-full h-10 w-10">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <rect x="2" y="8" width="20" height="12" rx="2" fill="#0b0b0b" />
+                    <path d="M2 10 L12 3 L22 10" stroke="#ffeded" stroke-width="1.2" fill="none" />
+                    <text x="12" y="16" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="9" fill="#fff">M</text>
+                </svg>
+            </div>
+            <span class="text-xl font-bold tracking-wider text-white">
+                MILAN <span class="text-red-600">REAL ESTATE</span>
+            </span>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
+            <div class="flex items-center gap-1 rounded-full border border-zinc-800 bg-zinc-950 px-2 py-1">
+                <a href="#hero" class="nav-icon-link inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white hover:bg-zinc-800 transition duration-200" aria-label="Home">
+                    <i class="fa-solid fa-house"></i><span class="hidden sm:inline">Home</span>
+                </a>
+                <a href="#properties" class="nav-icon-link inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white hover:bg-zinc-800 transition duration-200" aria-label="Properties">
+                    <i class="fa-solid fa-border-all"></i><span class="hidden sm:inline">Properties</span>
+                </a>
+                <a href="#about" class="nav-icon-link inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white hover:bg-zinc-800 transition duration-200" aria-label="About">
+                    <i class="fa-solid fa-circle-info"></i><span class="hidden sm:inline">About</span>
+                </a>
+                <a href="#contact" class="nav-icon-link inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white hover:bg-zinc-800 transition duration-200" aria-label="Contact">
+                    <i class="fa-solid fa-envelope"></i><span class="hidden sm:inline">Contact</span>
+                </a>
+            </div>
+            <button id="themeToggleBtn" class="rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-amber-500 hover:text-white transition duration-200 flex items-center gap-2" aria-label="Toggle theme">
+                <i id="themeToggleIcon" class="fa-solid fa-moon text-amber-300"></i>
+                <span class="hidden sm:inline">Theme</span>
+            </button>
+            <button id="openAdminPanelNavBtn" class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded text-xs font-semibold uppercase tracking-widest transition duration-200 flex items-center gap-2">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>Admin Panel</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- --- HERO SECTION --- -->
+    <header id="hero" class="relative min-h-[80vh] lg:h-[85vh] flex items-center justify-center px-6 py-14 lg:py-0 overflow-hidden">
+        <!-- Radial gradient canvas glow background -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-[#0a0a0a] to-[#0a0a0a] z-0"></div>
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto space-y-6">
+            <div class="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-full text-xs text-zinc-400">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                Premium Real Estate Platform in Ethiopia
+            </div>
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight">
+                Elevate Your Living Standard <br />
+                In <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-red-500">Addis Ababa</span>
+            </h1>
+            <p class="text-zinc-400 text-base md:text-xl max-w-2xl mx-auto font-light">
+                Discover architectural masterpieces, secure diplomatic enclaves, and premium high-rise penthouses managed by Milan Real Estate.
+            </p>
+
+            <!-- REAL-TIME FILTER CONTROLLER BAR -->
+            <div class="bg-zinc-900/80 border border-zinc-800 p-2 rounded-lg max-w-3xl mx-auto flex flex-col md:flex-row gap-2 shadow-2xl backdrop-blur-md">
+                <div class="flex items-center gap-2 px-3 flex-1 py-2 md:py-0">
+                    <i class="fa-solid fa-magnifying-glass text-zinc-500 text-lg"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput"
+                        placeholder="Search Bole, Kazanchis, CMC..." 
+                        class="bg-transparent w-full focus:outline-none text-sm text-white placeholder-zinc-500"
+                    />
+                </div>
+                <div class="flex gap-2 flex-wrap md:flex-nowrap">
+                    <select 
+                        id="subcityFilter"
+                        class="bg-zinc-800 text-zinc-300 text-xs rounded px-3 py-3 border border-zinc-700 focus:outline-none w-full md:w-auto"
+                    >
+                        <option value="All">All Sub-cities</option>
+                        <option value="Bole">Bole</option>
+                        <option value="Kirkos">Kirkos (Kazanchis/Old Airport)</option>
+                        <option value="Yeka">Yeka (CMC)</option>
+                    </select>
+                    <select 
+                        id="typeFilter"
+                        class="bg-zinc-800 text-zinc-300 text-xs rounded px-3 py-3 border border-zinc-700 focus:outline-none w-full md:w-auto"
+                    >
+                        <option value="All">All Types</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Condominium">Condominium</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Land">Land</option>
+                    </select>
+                    <button 
+                        id="filterBtn"
+                        class="bg-white text-black hover:bg-zinc-200 font-bold text-xs uppercase px-6 py-3 rounded tracking-wider transition w-full md:w-auto"
+                    >
+                        Find
+                    </button>
+                </div>
+            </div>
+            <p id="homeSearchStatus" class="min-h-[1.5rem] text-sm text-zinc-400"></p>
+        </div>
+    </header>
+
+    <!-- --- FEATURED LISTINGS GRID --- -->
+    <main id="properties" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <p class="text-red-500 text-xs font-bold uppercase tracking-widest mb-2">Curated Collection</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Exclusive Architectural Developments</h2>
+            </div>
+            <div class="text-zinc-400 text-sm flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-zinc-500"></i> <span id="resultsCount">Showing 4 Results</span>
+            </div>
+        </div>
+
+        <div id="propertyCategoryBar" class="flex items-center gap-3 overflow-x-auto pb-4 mb-4 no-scrollbar">
+            <button data-category="All" class="category-pill shrink-0 rounded-full border border-red-600 bg-red-600 text-white px-5 py-2 text-xs font-bold uppercase tracking-widest">All Listings</button>
+            <button data-category="Villa" class="category-pill shrink-0 rounded-full border border-zinc-800 bg-zinc-950 text-zinc-300 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:border-red-600 hover:text-white transition">Villa</button>
+            <button data-category="Apartment" class="category-pill shrink-0 rounded-full border border-zinc-800 bg-zinc-950 text-zinc-300 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:border-red-600 hover:text-white transition">Apartment</button>
+            <button data-category="Condominium" class="category-pill shrink-0 rounded-full border border-zinc-800 bg-zinc-950 text-zinc-300 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:border-red-600 hover:text-white transition">Condominium</button>
+            <button data-category="Commercial" class="category-pill shrink-0 rounded-full border border-zinc-800 bg-zinc-950 text-zinc-300 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:border-red-600 hover:text-white transition">Commercial</button>
+            <button data-category="Land" class="category-pill shrink-0 rounded-full border border-zinc-800 bg-zinc-950 text-zinc-300 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:border-red-600 hover:text-white transition">Land</button>
+        </div>
+
+        <!-- No Properties Fallback Banner Container -->
+        <div id="noResults" class="hidden text-center py-25 border border-dashed border-zinc-800 rounded-xl">
+            <p class="text-zinc-500">No matching premium estates found in these Addis Ababa sectors.</p>
+            <button id="resetFiltersLink" class="text-red-500 text-sm mt-2 underline cursor-pointer">Reset all filters</button>
+        </div>
+
+        <!-- Cards Target Insertion Area -->
+        <div id="listingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic JavaScript Content Will Inject Render Nodes Here -->
+        </div>
+    </main>
+
+    <!-- --- WHY MILAN REAL ESTATE --- -->
+    <section id="about" class="border-t border-zinc-900 bg-zinc-950 py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-red-500 text-xs font-bold uppercase tracking-widest">The Platform Advantage</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Securing Elite Property Transference in Ethiopia</h2>
+                <p class="text-zinc-400 leading-relaxed font-light">
+                    Milan Real Estate bridges the gap between ultra-high-net-worth investors, local real estate developers, and diplomatic expats. We offer zero-friction escrow consultation, architectural structural verification, and high-tier luxury asset management.
+                </p>
+                <!-- Amharic short snippet with 'more' expand -->
+                <div class="mt-4 text-zinc-300">
+                    <p id="amharicShort" class="text-sm leading-relaxed">የፕላትፎርሙ ብልጫ — በኢትዮጵያ ታዋቂ እና እጅግ ውድ ይዞታዎችን በታማኝነት እና የላለፉ ልምዶች እንደሚያስተዳድር።</p>
+                    <button id="amharicMoreBtn" class="mt-2 text-red-500 text-sm font-semibold">More</button>
+                    <div id="amharicFull" class="hidden mt-3 text-zinc-400 text-sm leading-relaxed">
+                        <p>የፕላትፎርሙ ብልጫ (The Platform Advantage)
+                        በኢትዮጵያ ታዋቂና እጅግ ውድ የሆኑ ይዞታዎችን በታማኝነት ማዛወር። ሚላን ሬል እና የእርስዎ እቃዎችን ከፍተኛ ደረጃ ያላቸው ምርቶች እና አገልግሎቶች ይሰጣሉ።</p>
+                        <p class="mt-2">100% በአካል ተገኝተን ያረጋገጥናቸው ባለከፍተኛ ፎቅ አፓርታማዎች እና ዘመናዊ የጂ+ቪላዎች (G+ villas)።</p>
+                        <p class="mt-2">ለኪርኮስ እና ለቦሌ አካባቢ የዲፕሎማቲክ ደረጃ የደህንነት ክልል ፈቃዶች እና የባለቤትነት ማረጋገጫዎች እንዲመለከቱ እንርዳለን።</p>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-2 text-sm text-zinc-300">
+                        <i class="fa-solid fa-circle-check text-red-500 mt-0.5 shrink-0"></i>
+                        <span>100% physically vetted high-rise apartments and premium G+ villas</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-sm text-zinc-300">
+                        <i class="fa-solid fa-circle-check text-red-500 mt-0.5 shrink-0"></i>
+                        <span>Diplomatic security parameter clearances for Kirkos & Bole estates</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-sm text-zinc-300">
+                        <i class="fa-solid fa-circle-check text-red-500 mt-0.5 shrink-0"></i>
+                        <span>Streamlined digital transactions and transparent title-deed validations</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative aspect-[4/3] rounded-xl overflow-hidden border border-zinc-800 shadow-2xl">
+                <img 
+                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" 
+                    alt="Luxury interior architecture layout design" 
+                    class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-700"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- --- CONTACT & CORPORATE FOOTER --- -->
+    <footer id="contact" class="border-t border-zinc-900 bg-[#0a0a0a] pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="space-y-4 md:col-span-2">
+                <div class="flex items-center gap-2">
+                    <div class="h-3 w-3 bg-red-600 rounded-full"></div>
+                    <span class="text-lg font-bold tracking-wider">MILAN REAL ESTATE</span>
+                </div>
+                <p class="text-zinc-500 text-sm max-w-sm font-light">
+                    The premier hyper-luxury real estate portal serving the heart of Africa’s diplomatic hub. Ethiopia.
+                </p>
+                <div class="space-y-2 text-zinc-400 text-sm pt-2">
+                    <p class="flex items-center gap-3"><i class="fa-solid fa-phone text-red-500 w-4"></i> 0953550206</p>
+                    <p class="flex items-center gap-3"><i class="fa-solid fa-envelope text-red-500 w-4"></i> Milanmilanhouse@gmail.com</p>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-4">Prime Sectors</h4>
+                <ul class="space-y-2 text-zinc-500 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-150">Bole Atlas & Rwanda</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-150">Kazanchis Diplomatic Zone</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-150">Old Airport Residential</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-150">CMC Gated Communities</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-4">Corporate</h4>
+                <ul class="space-y-2 text-zinc-500 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-150">Vercel Deployment Status</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-150">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-150">Terms of Brokerage</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between text-zinc-600 text-xs gap-4">
+            <p>© 2026 Shewit Homes · Premium Ethiopian Real Estate · Ethiopia</p>
+            <p>Designed for premium property publishing and listing management.</p>
+        </div>
+    </footer>
+
+    <!-- --- VIEWING MODAL COMPONENT (Hidden by Default) --- -->
+    <div id="bookingModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-zinc-800 max-w-3xl w-full p-6 rounded-xl relative space-y-6 max-h-[90vh] overflow-y-auto">
+            <div>
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Property Details</h3>
+                        <p class="text-zinc-400 text-xs mt-1">For: <span id="modalPropertyTitle" class="text-red-400 font-semibold"></span></p>
+                    </div>
+                    <button type="button" id="detailsModalCloseBtn" class="h-10 w-10 rounded-full border border-zinc-800 text-zinc-400 hover:text-white hover:border-red-600 transition duration-200" aria-label="Close property details">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-6">
+                <div class="space-y-4">
+                    <div id="modalGallery" class="grid grid-cols-2 gap-3"></div>
+                    <div id="modalVideoWrap" class="hidden rounded-xl overflow-hidden border border-zinc-800 bg-black"></div>
+                </div>
+                <div class="space-y-5">
+                    <div class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 space-y-3">
+                        <p class="text-xs uppercase tracking-widest text-zinc-500">Overview</p>
+                        <div id="modalMeta" class="flex flex-wrap gap-2 text-[11px] text-zinc-300"></div>
+                        <p id="modalDescription" class="text-sm text-zinc-400 leading-relaxed"></p>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-3">
+                        <a id="callAgentBtn" href="#" class="rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-bold uppercase tracking-wider py-3 px-4 text-center transition duration-200">Call Agent</a>
+                        <a id="whatsappBtn" href="#" target="_blank" rel="noreferrer" class="rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold uppercase tracking-wider py-3 px-4 text-center transition duration-200">WhatsApp</a>
+                        <a id="telegramBtn" href="#" target="_blank" rel="noreferrer" class="rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-sm font-bold uppercase tracking-wider py-3 px-4 text-center transition duration-200">Telegram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- ADMIN LOGIN MODAL --- -->
+    <div id="adminLoginModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
+        <div class="w-full max-w-md rounded-2xl border border-zinc-800 bg-zinc-950 p-6 space-y-5 shadow-2xl shadow-black/60">
+            <div>
+                <p class="text-xs uppercase tracking-[0.3em] text-red-500 font-semibold">Admin Login</p>
+                <h3 class="text-2xl font-bold text-white mt-1">Sign in to manage listings</h3>
+                <p class="text-sm text-zinc-500 mt-2">Use username <span class="text-white font-semibold">milan</span> and password <span class="text-white font-semibold">1919</span>.</p>
+            </div>
+            <form id="adminLoginForm" class="space-y-4">
+                <div>
+                    <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Username</label>
+                    <input required id="adminUsername" type="text" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="milan" />
+                </div>
+                <div>
+                    <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Password</label>
+                    <input required id="adminPassword" type="password" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="1919" />
+                </div>
+                <p id="adminLoginError" class="hidden text-sm text-red-400">Invalid credentials. Try milan / 1919.</p>
+                <div class="flex gap-3 pt-2">
+                    <button type="button" id="cancelAdminLoginBtn" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-red-600 hover:text-white transition">Cancel</button>
+                    <button type="submit" class="flex-1 rounded-lg bg-red-600 px-4 py-3 text-xs font-bold uppercase tracking-widest text-white hover:bg-red-700 transition">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- --- ADMIN PANEL DRAWER --- -->
+    <div id="adminPanel" class="fixed inset-y-0 right-0 z-50 w-full max-w-5xl translate-x-full bg-[#0b0b0b] border-l border-zinc-800 shadow-2xl shadow-black/60 transition-transform duration-300 ease-out overflow-y-auto">
+        <div class="sticky top-0 flex flex-col gap-4 border-b border-zinc-900 bg-[#0b0b0b]/95 backdrop-blur-md px-5 sm:px-6 py-4">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-red-500 font-semibold">Admin Panel</p>
+                    <h3 class="text-2xl font-bold text-white mt-1">Post Property and Manage Listings</h3>
+                </div>
+                <div class="flex flex-wrap justify-end gap-2">
+                    <button id="backToSiteBtn" class="rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-red-600 hover:text-white transition">Back to Site</button>
+                    <button id="logoutAdminBtn" class="rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-red-600 hover:text-white transition">Logout</button>
+                    <button id="closeAdminPanelBtn" class="h-10 w-10 rounded-full border border-zinc-800 text-zinc-400 hover:text-white hover:border-red-600 transition duration-200" aria-label="Close admin panel">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                <button id="postPropertyTabBtn" class="admin-tab-btn rounded-full bg-red-600 px-5 py-2 text-xs font-bold uppercase tracking-widest text-white">Post Property</button>
+                <button id="manageListingsTabBtn" class="admin-tab-btn rounded-full border border-zinc-800 bg-zinc-950 px-5 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-red-600 hover:text-white transition">Manage Listings</button>
+            </div>
+        </div>
+
+        <div id="adminWorkspace" class="p-5 sm:p-6 space-y-6 hidden">
+            <div id="adminNotice" class="hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300"></div>
+            <section class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 space-y-2">
+                <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Admin Section</p>
+                <p class="text-sm text-zinc-400">Use this area to publish, update, and manage website properties from one place.</p>
+            </section>
+            <section id="postPropertySection" class="space-y-4">
+                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 space-y-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Publish New Property</p>
+                        <p class="text-sm text-zinc-500 mt-1">Fill in all details and publish directly to your website.</p>
+                    </div>
+
+                    <form id="adminPropertyForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="md:col-span-2">
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Property Title</label>
+                            <input required type="text" id="adminTitle" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="Luxurious G+3 villa in Bole" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Type</label>
+                            <select required id="adminType" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600">
+                                <option value="Villa">Villa</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Condominium">Condominium</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Land">Land</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Status</label>
+                            <select required id="adminStatus" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600">
+                                <option value="For Sale">For Sale</option>
+                                <option value="Sold">Sold</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Price (ETB)</label>
+                            <input required type="number" min="0" step="1" id="adminPrice" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="45000000" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Location</label>
+                            <input required type="text" id="adminLocation" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="Bole, Addis Ababa" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Bedrooms</label>
+                            <input required type="number" min="0" step="1" id="adminBedrooms" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="4" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Bathrooms</label>
+                            <input required type="number" min="0" step="0.5" id="adminBathrooms" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="4.5" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Size</label>
+                            <input required type="text" id="adminSize" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="320 sqm" />
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Description</label>
+                            <textarea required id="adminDescription" rows="4" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="Add a detailed description of this property."></textarea>
+                        </div>
+                        <div class="md:col-span-2 grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Upload Photos (JPG, PNG - multiple allowed)</label>
+                                <input type="file" id="adminPhotos" multiple accept="image/jpeg,image/png" class="w-full rounded border border-zinc-800 bg-zinc-900 px-3 py-3 text-sm text-zinc-300 file:mr-4 file:rounded-full file:border-0 file:bg-red-600 file:px-4 file:py-2 file:text-xs file:font-bold file:uppercase file:tracking-widest file:text-white hover:file:bg-red-700" />
+                            </div>
+                            <div>
+                                <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Upload Video (MP4, MOV)</label>
+                                <input type="file" id="adminVideo" accept="video/mp4,video/quicktime" class="w-full rounded border border-zinc-800 bg-zinc-900 px-3 py-3 text-sm text-zinc-300 file:mr-4 file:rounded-full file:border-0 file:bg-red-600 file:px-4 file:py-2 file:text-xs file:font-bold file:uppercase file:tracking-widest file:text-white hover:file:bg-red-700" />
+                            </div>
+                            <div>
+                                <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">YouTube / Video URL</label>
+                                <input type="url" id="adminVideoUrl" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-red-600" placeholder="https://youtube.com" />
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 flex gap-3 pt-2">
+                            <button id="adminSubmitBtn" type="submit" class="flex-1 bg-red-600 hover:bg-red-700 text-white text-xs uppercase font-bold tracking-wider py-3 rounded transition duration-200">Publish Property</button>
+                            <button type="button" id="adminResetBtn" class="flex-1 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-xs uppercase font-bold tracking-wider py-3 rounded border border-zinc-800 transition duration-200">Reset Form</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="manageListingsSection" class="hidden space-y-4">
+                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+                    <div class="flex items-center justify-between gap-3 mb-4">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Manage Listings</p>
+                            <p class="text-sm text-zinc-500 mt-1"><span id="adminListingCount">0</span> active properties on the website.</p>
+                        </div>
+                    </div>
+                    <div id="adminListings" class="space-y-3"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="adminBackdrop" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40"></div>
+
+    <!-- --- DOM CORE FUNCTIONAL JAVASCRIPT --- -->
+    <script>
+        const STORAGE_KEY = 'milan_real_estate_listings_v2';
+        const ADMIN_SESSION_KEY = 'milan_admin_session_v1';
+        const ADMIN_USERNAME = 'milan';
+        const ADMIN_PASSWORD = '1919';
+        const DEFAULT_CONTACT_PHONE = '+251953550206';
+        const DEFAULT_CONTACT_PHONE_E164 = '+251953550206';
+        const DEFAULT_PROPERTY_IMAGE = 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80';
+
+        const state = {
+            propertyListings: loadPropertyListings(),
+            activeCategory: 'All',
+            adminLoggedIn: sessionStorage.getItem(ADMIN_SESSION_KEY) === 'true',
+            editingPropertyId: null,
+            currentModalProperty: null,
+            activeAdminTab: 'post'
+        };
+
+        const listingsGrid = document.getElementById('listingsGrid');
+        const resultsCount = document.getElementById('resultsCount');
+        const noResults = document.getElementById('noResults');
+        const propertyCategoryBar = document.getElementById('propertyCategoryBar');
+
+        const searchInput = document.getElementById('searchInput');
+        const subcityFilter = document.getElementById('subcityFilter');
+        const typeFilter = document.getElementById('typeFilter');
+        const filterBtn = document.getElementById('filterBtn');
+        const resetFiltersLink = document.getElementById('resetFiltersLink');
+        const homeSearchStatus = document.getElementById('homeSearchStatus');
+
+        const heroEl = document.getElementById('hero');
+        const aboutEl = document.getElementById('about');
+        const heroSearchText = heroEl ? heroEl.innerText.toLowerCase() : '';
+        const aboutSearchText = aboutEl ? aboutEl.innerText.toLowerCase() : '';
+
+        const bookingModal = document.getElementById('bookingModal');
+        const modalPropertyTitle = document.getElementById('modalPropertyTitle');
+        const modalGallery = document.getElementById('modalGallery');
+        const modalVideoWrap = document.getElementById('modalVideoWrap');
+        const modalMeta = document.getElementById('modalMeta');
+        const modalDescription = document.getElementById('modalDescription');
+        const callAgentBtn = document.getElementById('callAgentBtn');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const telegramBtn = document.getElementById('telegramBtn');
+        const detailsModalCloseBtn = document.getElementById('detailsModalCloseBtn');
+
+        const adminLoginModal = document.getElementById('adminLoginModal');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const adminUsername = document.getElementById('adminUsername');
+        const adminPassword = document.getElementById('adminPassword');
+        const adminLoginError = document.getElementById('adminLoginError');
+        const cancelAdminLoginBtn = document.getElementById('cancelAdminLoginBtn');
+
+        const adminPanel = document.getElementById('adminPanel');
+        const adminBackdrop = document.getElementById('adminBackdrop');
+        const openAdminPanelBtn = document.getElementById('openAdminPanelBtn');
+        const openAdminPanelNavBtn = document.getElementById('openAdminPanelNavBtn');
+        const closeAdminPanelBtn = document.getElementById('closeAdminPanelBtn');
+        const backToSiteBtn = document.getElementById('backToSiteBtn');
+        const logoutAdminBtn = document.getElementById('logoutAdminBtn');
+        const postPropertyTabBtn = document.getElementById('postPropertyTabBtn');
+        const manageListingsTabBtn = document.getElementById('manageListingsTabBtn');
+        const adminWorkspace = document.getElementById('adminWorkspace');
+        const postPropertySection = document.getElementById('postPropertySection');
+        const manageListingsSection = document.getElementById('manageListingsSection');
+        const adminNotice = document.getElementById('adminNotice');
+        const adminPropertyForm = document.getElementById('adminPropertyForm');
+        const adminSubmitBtn = document.getElementById('adminSubmitBtn');
+        const adminResetBtn = document.getElementById('adminResetBtn');
+        const adminListings = document.getElementById('adminListings');
+        const adminListingCount = document.getElementById('adminListingCount');
+        const adminTitle = document.getElementById('adminTitle');
+        const adminType = document.getElementById('adminType');
+        const adminStatus = document.getElementById('adminStatus');
+        const adminPrice = document.getElementById('adminPrice');
+        const adminLocation = document.getElementById('adminLocation');
+        const adminBedrooms = document.getElementById('adminBedrooms');
+        const adminBathrooms = document.getElementById('adminBathrooms');
+        const adminSize = document.getElementById('adminSize');
+        const adminDescription = document.getElementById('adminDescription');
+        const adminPhotos = document.getElementById('adminPhotos');
+        const adminVideo = document.getElementById('adminVideo');
+        const adminVideoUrl = document.getElementById('adminVideoUrl');
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeToggleIcon = document.getElementById('themeToggleIcon');
+        let adminNoticeTimer = null;
+
+        function formatPrice(value) {
+            return `ETB ${Number(value).toLocaleString('en-US')}`;
+        }
+
+        function digitsOnly(value) {
+            return String(value || '').replace(/\D/g, '');
+        }
+
+        function normalizePhoneNumber(phone) {
+            const digits = digitsOnly(phone);
+            if (!digits) return DEFAULT_CONTACT_PHONE_E164;
+            if (digits.startsWith('251')) return `+${digits}`;
+            if (digits.startsWith('0')) return `+251${digits.slice(1)}`;
+            return `+251${digits}`;
+        }
+
+        function toSubcity(location) {
+            const normalized = String(location || '').toLowerCase();
+            if (normalized.includes('bole')) return 'Bole';
+            if (normalized.includes('kazan') || normalized.includes('old airport') || normalized.includes('kirkos')) return 'Kirkos';
+            if (normalized.includes('cmc') || normalized.includes('yeka')) return 'Yeka';
+            return 'All';
+        }
+
+        function buildWhatsappUrl(phone, text) {
+            const digits = digitsOnly(phone);
+            const international = digits.startsWith('0') ? `251${digits.slice(1)}` : digits;
+            return `https://wa.me/${international}?text=${encodeURIComponent(text)}`;
+        }
+
+        function buildTelegramUrl(phone, text) {
+            const digits = digitsOnly(phone);
+            return `https://t.me/+${digits}`;
+        }
+
+        function readFileAsDataUrl(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(String(reader.result || ''));
+                reader.onerror = () => reject(reader.error);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function seedListings() {
+            return [
+                {
+                    id: 1,
+                    title: 'The Milan Real Estate Premium Villa',
+                    type: 'Villa',
+                    status: 'For Sale',
+                    priceValue: 45000000,
+                    location: 'Bole Atlas, Addis Ababa',
+                    subcity: 'Bole',
+                    beds: 4,
+                    baths: 4.5,
+                    size: '320 sqm',
+                    description: 'A premium contemporary villa with private compound, refined interiors, and strong investment appeal in Bole.',
+                    media: { photos: [DEFAULT_PROPERTY_IMAGE], video: '', videoUrl: '' },
+                    featured: true
+                },
+                {
+                    id: 2,
+                    title: 'Luxury Diplomatic Apartment',
+                    type: 'Apartment',
+                    status: 'For Sale',
+                    priceValue: 28500000,
+                    location: 'Old Airport, Addis Ababa',
+                    subcity: 'Kirkos',
+                    beds: 3,
+                    baths: 3,
+                    size: '210 sqm',
+                    description: 'A secure apartment near the diplomatic corridor with modern finishes and city access.',
+                    media: { photos: [DEFAULT_PROPERTY_IMAGE], video: '', videoUrl: '' },
+                    featured: true
+                },
+                {
+                    id: 3,
+                    title: 'Modern Skyline Condominium',
+                    type: 'Condominium',
+                    status: 'For Sale',
+                    priceValue: 18500000,
+                    location: 'CMC, Addis Ababa',
+                    subcity: 'Yeka',
+                    beds: 3,
+                    baths: 2,
+                    size: '180 sqm',
+                    description: 'High-rise condominium living with bright common spaces and practical layouts.',
+                    media: { photos: [DEFAULT_PROPERTY_IMAGE], video: '', videoUrl: '' },
+                    featured: false
+                },
+                {
+                    id: 4,
+                    title: 'Kazanchis Executive Commercial Space',
+                    type: 'Commercial',
+                    status: 'For Sale',
+                    priceValue: 38000000,
+                    location: 'Kazanchis, Addis Ababa',
+                    subcity: 'Kirkos',
+                    beds: 0,
+                    baths: 2,
+                    size: '280 sqm',
+                    description: 'Flexible commercial floor plan suitable for offices, retail, or premium service use.',
+                    media: { photos: [DEFAULT_PROPERTY_IMAGE], video: '', videoUrl: '' },
+                    featured: false
+                },
+                {
+                    id: 5,
+                    title: 'Prime Bole Land Parcel',
+                    type: 'Land',
+                    status: 'For Sale',
+                    priceValue: 56000000,
+                    location: 'Bole, Addis Ababa',
+                    subcity: 'Bole',
+                    beds: 0,
+                    baths: 0,
+                    size: '600 sqm',
+                    description: 'Well-located land ready for custom development in one of Addis Ababa’s strongest corridors.',
+                    media: { photos: [DEFAULT_PROPERTY_IMAGE], video: '', videoUrl: '' },
+                    featured: false
+                }
+            ].map(normalizeProperty);
+        }
+
+        function normalizeProperty(property) {
+            const media = property.media || {};
+            const photos = Array.isArray(media.photos) && media.photos.length ? media.photos : (property.image ? [property.image] : [DEFAULT_PROPERTY_IMAGE]);
+            const title = String(property.title || 'Untitled Property').replace(/Milan Red/gi, 'Milan Real Estate');
+            const agentPhone = normalizePhoneNumber(property.agentPhone || DEFAULT_CONTACT_PHONE_E164);
+
+            return {
+                id: property.id,
+                title,
+                type: property.type || 'Villa',
+                status: property.status || 'For Sale',
+                priceValue: Number(property.priceValue || String(property.price || '').replace(/[^0-9]/g, '') || 0),
+                price: property.price || formatPrice(property.priceValue || 0),
+                location: property.location || '',
+                subcity: property.subcity || toSubcity(property.location || ''),
+                beds: Number(property.beds || 0),
+                baths: Number(property.baths || 0),
+                size: property.size || property.area || '',
+                description: property.description || 'No description provided yet.',
+                media: {
+                    photos,
+                    video: media.video || '',
+                    videoUrl: media.videoUrl || ''
+                },
+                featured: Boolean(property.featured),
+                agentPhone
+            };
+        }
+
+        function loadPropertyListings() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                const sessionListings = window.__milanPropertyListings;
+
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed)) {
+                        return parsed.map(normalizeProperty);
+                    }
+                }
+
+                if (Array.isArray(sessionListings)) {
+                    return sessionListings.map(normalizeProperty);
+                }
+
+                const seeded = seedListings();
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(seeded));
+                return seeded;
+            } catch (error) {
+                return seedListings();
+            }
+        }
+
+        function savePropertyListings() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state.propertyListings));
+            } catch (error) {
+                window.__milanPropertyListings = state.propertyListings;
+            }
+        }
+
+        function setBodyLocked(locked) {
+            document.body.style.overflow = locked ? 'hidden' : 'auto';
+        }
+
+        function showAdminNotice(message, tone) {
+            if (adminNoticeTimer) {
+                clearTimeout(adminNoticeTimer);
+                adminNoticeTimer = null;
+            }
+            adminNotice.textContent = message;
+            adminNotice.className = `rounded-xl border px-4 py-3 text-sm ${tone === 'error' ? 'border-red-500/30 bg-red-500/10 text-red-300' : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300'}`;
+            adminNotice.classList.remove('hidden');
+            if (tone !== 'error') {
+                adminNoticeTimer = window.setTimeout(() => {
+                    clearAdminNotice();
+                }, 2200);
+            }
+        }
+
+        function setTheme(themeName) {
+            const theme = themeName === 'light' ? 'light' : 'dark';
+            document.body.dataset.theme = theme;
+            try {
+                localStorage.setItem('milan_real_estate_theme_v1', theme);
+            } catch (error) {
+                window.__milanTheme = theme;
+            }
+
+            if (themeToggleIcon) {
+                themeToggleIcon.className = theme === 'light' ? 'fa-solid fa-sun text-amber-300' : 'fa-solid fa-moon text-amber-300';
+            }
+        }
+
+        function loadTheme() {
+            try {
+                return localStorage.getItem('milan_real_estate_theme_v1') || window.__milanTheme || 'dark';
+            } catch (error) {
+                return window.__milanTheme || 'dark';
+            }
+        }
+
+        function clearAdminNotice() {
+            if (adminNoticeTimer) {
+                clearTimeout(adminNoticeTimer);
+                adminNoticeTimer = null;
+            }
+            adminNotice.classList.add('hidden');
+            adminNotice.textContent = '';
+        }
+
+        function updateCategoryPills() {
+            document.querySelectorAll('.category-pill').forEach(button => {
+                const isActive = button.getAttribute('data-category') === state.activeCategory;
+                button.className = `category-pill shrink-0 rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest transition ${isActive ? 'border border-red-600 bg-red-600 text-white' : 'border border-zinc-800 bg-zinc-950 text-zinc-300 hover:border-red-600 hover:text-white'}`;
+            });
+        }
+
+        function getFilteredListings() {
+            const query = searchInput.value.toLowerCase().trim();
+            const selectedSubcity = subcityFilter.value;
+            const selectedType = typeFilter.value;
+
+            return state.propertyListings.filter(property => {
+                const matchesQuery = !query || [property.title, property.location, property.description, property.type].join(' ').toLowerCase().includes(query);
+                const matchesSubcity = selectedSubcity === 'All' || property.subcity === selectedSubcity;
+                const matchesTypeSelect = selectedType === 'All' || property.type === selectedType;
+                const matchesCategory = state.activeCategory === 'All' || property.type === state.activeCategory;
+                return matchesQuery && matchesSubcity && matchesTypeSelect && matchesCategory;
+            });
+        }
+
+        function renderProperties(items) {
+            listingsGrid.innerHTML = '';
+            resultsCount.textContent = `Showing ${items.length} Results`;
+            const activeSearch = searchInput.value.trim();
+
+            if (!items.length) {
+                if (homeSearchStatus) {
+                    homeSearchStatus.textContent = activeSearch
+                        ? 'Sorry for now, but we will discover what you want. Coming soon.'
+                        : '';
+                    homeSearchStatus.className = activeSearch
+                        ? 'min-h-[1.5rem] text-sm text-amber-400'
+                        : 'min-h-[1.5rem] text-sm text-zinc-400';
+                }
+                noResults.classList.remove('hidden');
+                noResults.querySelector('p').textContent = 'Sorry for now, but we will discover what you want. Coming soon.';
+                listingsGrid.classList.add('hidden');
+                return;
+            }
+
+            if (homeSearchStatus && activeSearch) {
+                homeSearchStatus.textContent = `Found ${items.length} matching ${items.length === 1 ? 'property' : 'properties'}.`;
+                homeSearchStatus.className = 'min-h-[1.5rem] text-sm text-emerald-400';
+            }
+
+            noResults.classList.add('hidden');
+            listingsGrid.classList.remove('hidden');
+
+            items.forEach(property => {
+                const thumbnail = property.media.photos[0] || DEFAULT_PROPERTY_IMAGE;
+                const description = property.description.length > 110 ? `${property.description.slice(0, 110)}...` : property.description;
+
+                const card = document.createElement('article');
+                card.className = 'group bg-zinc-950 border border-zinc-900 rounded-xl overflow-hidden hover:border-zinc-700 transition duration-300 flex flex-col justify-between';
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="${thumbnail}" alt="${property.title}" class="object-cover w-full h-full group-hover:scale-105 transition duration-500" />
+                        ${property.featured ? '<span class="absolute top-4 left-4 bg-red-600 text-[10px] uppercase font-black tracking-widest px-2 py-1 rounded">Premium Elite</span>' : ''}
+                        <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-[10px] uppercase font-black tracking-widest px-2 py-1 rounded border border-zinc-800 text-white">${property.status}</span>
+                        <span class="absolute bottom-4 right-4 bg-black/70 backdrop-blur-md text-sm font-bold px-3 py-1 rounded border border-zinc-800 text-red-400">${property.price}</span>
+                    </div>
+                    <div class="p-6 space-y-4 flex-1 flex flex-col">
+                        <div>
+                            <span class="text-xs text-zinc-500 font-semibold tracking-wider uppercase">${property.type} • ${property.subcity}</span>
+                            <h3 class="text-lg font-bold text-white mt-1 group-hover:text-red-400 transition duration-150">${property.title}</h3>
+                            <p class="text-zinc-400 text-xs flex items-center gap-1.5 mt-1"><i class="fa-solid fa-map-pin text-red-500 text-xs"></i> ${property.location}</p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 py-3 border-y border-zinc-900 text-zinc-400 text-xs">
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-zinc-600"></i> <span>${property.beds} Beds</span></div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-zinc-600"></i> <span>${property.baths} Baths</span></div>
+                            <div class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-zinc-600"></i> <span>${property.size}</span></div>
+                        </div>
+                        <p class="text-sm text-zinc-400 leading-relaxed">${description}</p>
+                        <div class="grid grid-cols-2 gap-2 mt-auto">
+                            <button data-property-action="view" data-property-id="${property.id}" class="rounded-lg bg-zinc-900 hover:bg-red-600 border border-zinc-800 hover:border-red-600 text-white text-xs font-bold uppercase tracking-wider py-3 transition duration-200">View Details</button>
+                            <a href="tel:${property.agentPhone}" class="rounded-lg bg-zinc-900 hover:bg-red-600 border border-zinc-800 hover:border-red-600 text-white text-xs font-bold uppercase tracking-wider py-3 text-center transition duration-200">Call Agent</a>
+                            <a href="${buildWhatsappUrl(property.agentPhone, `Hello, I am interested in ${property.title}.`)}" target="_blank" rel="noreferrer" class="rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider py-3 text-center transition duration-200">WhatsApp</a>
+                            <a href="${buildTelegramUrl(property.agentPhone, `Hello, I am interested in ${property.title}.`)}" target="_blank" rel="noreferrer" class="rounded-lg bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold uppercase tracking-wider py-3 text-center transition duration-200">Telegram</a>
+                        </div>
+                    </div>
+                `;
+                listingsGrid.appendChild(card);
+            });
+        }
+
+        function highlightFirstListingCard() {
+            const firstCard = listingsGrid.querySelector('article');
+            if (!firstCard) return;
+            firstCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            firstCard.classList.add('ring-2', 'ring-red-600');
+            window.setTimeout(() => firstCard.classList.remove('ring-2', 'ring-red-600'), 1500);
+        }
+
+        function openPropertyModal(property) {
+            state.currentModalProperty = property;
+            modalPropertyTitle.textContent = property.title;
+            modalMeta.innerHTML = `
+                <span class="rounded-full border border-zinc-800 px-3 py-1">${property.type}</span>
+                <span class="rounded-full border border-zinc-800 px-3 py-1">${property.status}</span>
+                <span class="rounded-full border border-zinc-800 px-3 py-1">${property.price}</span>
+                <span class="rounded-full border border-zinc-800 px-3 py-1">${property.location}</span>
+                <span class="rounded-full border border-zinc-800 px-3 py-1">${property.size}</span>
+            `;
+            modalDescription.textContent = property.description;
+
+            modalGallery.innerHTML = (property.media.photos.length ? property.media.photos : [DEFAULT_PROPERTY_IMAGE]).map(photo => `
+                <div class="aspect-[4/3] overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+                    <img src="${photo}" alt="${property.title}" class="h-full w-full object-cover" />
+                </div>
+            `).join('');
+
+            modalVideoWrap.innerHTML = '';
+            if (property.media.video) {
+                modalVideoWrap.classList.remove('hidden');
+                modalVideoWrap.innerHTML = `<video class="w-full h-full max-h-[320px]" controls src="${property.media.video}"></video>`;
+            } else if (property.media.videoUrl) {
+                modalVideoWrap.classList.remove('hidden');
+                const embeddedUrl = property.media.videoUrl.includes('youtube.com') || property.media.videoUrl.includes('youtu.be')
+                    ? property.media.videoUrl.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')
+                    : property.media.videoUrl;
+                modalVideoWrap.innerHTML = `<iframe class="w-full aspect-video" src="${embeddedUrl}" title="Property video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            } else {
+                modalVideoWrap.classList.add('hidden');
+            }
+
+            callAgentBtn.href = `tel:${property.agentPhone}`;
+            whatsappBtn.href = buildWhatsappUrl(property.agentPhone, `Hello, I am interested in ${property.title}.`);
+            telegramBtn.href = buildTelegramUrl(property.agentPhone, `Hello, I am interested in ${property.title}.`);
+
+            bookingModal.classList.remove('hidden');
+            setBodyLocked(true);
+        }
+
+        function closePropertyModal() {
+            bookingModal.classList.add('hidden');
+            state.currentModalProperty = null;
+            setBodyLocked(false);
+        }
+
+        function openAdminLoginModal() {
+            adminLoginError.classList.add('hidden');
+            adminLoginModal.classList.remove('hidden');
+            adminUsername.value = '';
+            adminPassword.value = '';
+            adminUsername.focus();
+        }
+
+        function closeAdminLoginModal() {
+            adminLoginModal.classList.add('hidden');
+        }
+
+        function showAdminPanelShell() {
+            if (!state.adminLoggedIn) {
+                openAdminLoginModal();
+                return;
+            }
+
+            adminPanel.classList.remove('translate-x-full');
+            adminBackdrop.classList.remove('hidden');
+            adminWorkspace.classList.remove('hidden');
+            setBodyLocked(true);
+            showAdminTab(state.activeAdminTab);
+            renderAdminListings();
+            clearAdminNotice();
+        }
+
+        function closeAdminPanel() {
+            adminPanel.classList.add('translate-x-full');
+            adminBackdrop.classList.add('hidden');
+            closeAdminLoginModal();
+            setBodyLocked(false);
+        }
+
+        function logoutAdmin() {
+            sessionStorage.removeItem(ADMIN_SESSION_KEY);
+            state.adminLoggedIn = false;
+            state.editingPropertyId = null;
+            closeAdminPanel();
+        }
+
+        function showAdminTab(tabName) {
+            state.activeAdminTab = tabName;
+            postPropertySection.classList.toggle('hidden', tabName !== 'post');
+            manageListingsSection.classList.toggle('hidden', tabName !== 'manage');
+
+            postPropertyTabBtn.className = `admin-tab-btn rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest transition ${tabName === 'post' ? 'bg-red-600 text-white' : 'border border-zinc-800 bg-zinc-950 text-zinc-300 hover:border-red-600 hover:text-white'}`;
+            manageListingsTabBtn.className = `admin-tab-btn rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest transition ${tabName === 'manage' ? 'bg-red-600 text-white' : 'border border-zinc-800 bg-zinc-950 text-zinc-300 hover:border-red-600 hover:text-white'}`;
+        }
+
+        function resetAdminForm() {
+            state.editingPropertyId = null;
+            adminPropertyForm.reset();
+            adminSubmitBtn.textContent = 'Publish Property';
+            clearAdminNotice();
+        }
+
+        function populateAdminForm(property) {
+            state.editingPropertyId = property.id;
+            adminTitle.value = property.title;
+            adminType.value = property.type;
+            adminStatus.value = property.status;
+            adminPrice.value = property.priceValue;
+            adminLocation.value = property.location;
+            adminBedrooms.value = property.beds;
+            adminBathrooms.value = property.baths;
+            adminSize.value = property.size;
+            adminDescription.value = property.description;
+            adminPhotos.value = '';
+            adminVideo.value = '';
+            adminVideoUrl.value = property.media.videoUrl || '';
+            adminSubmitBtn.textContent = 'Update Property';
+            showAdminTab('post');
+        }
+
+        async function collectMedia(existingProperty) {
+            const photoFiles = Array.from(adminPhotos.files || []);
+            const videoFile = (adminVideo.files || [])[0] || null;
+            const videoUrl = adminVideoUrl.value.trim();
+
+            let photos = existingProperty?.media?.photos ? [...existingProperty.media.photos] : [];
+
+            if (photoFiles.length) {
+                photos = await Promise.all(photoFiles.map(readFileAsDataUrl));
+            }
+
+            if (!photos.length) {
+                photos = [DEFAULT_PROPERTY_IMAGE];
+            }
+
+            let video = existingProperty?.media?.video || '';
+            if (videoFile) {
+                video = await readFileAsDataUrl(videoFile);
+            }
+
+            return {
+                photos,
+                video,
+                videoUrl
+            };
+        }
+
+        function buildPropertyFromForm(existingProperty, media) {
+            return normalizeProperty({
+                id: existingProperty?.id || Date.now(),
+                title: adminTitle.value.trim(),
+                type: adminType.value,
+                status: adminStatus.value,
+                priceValue: Number(adminPrice.value) || 0,
+                price: formatPrice(Number(adminPrice.value) || 0),
+                location: adminLocation.value.trim(),
+                subcity: toSubcity(adminLocation.value.trim()),
+                beds: Number(adminBedrooms.value) || 0,
+                baths: Number(adminBathrooms.value) || 0,
+                size: adminSize.value.trim(),
+                description: adminDescription.value.trim(),
+                media,
+                featured: existingProperty?.featured || false,
+                agentPhone: existingProperty?.agentPhone || DEFAULT_CONTACT_PHONE
+            });
+        }
+
+        async function handleAdminPropertySubmit(event) {
+            event.preventDefault();
+
+            const existingProperty = state.propertyListings.find(property => property.id === state.editingPropertyId) || null;
+            const media = await collectMedia(existingProperty);
+            const property = buildPropertyFromForm(existingProperty, media);
+
+            if (existingProperty) {
+                state.propertyListings = state.propertyListings.map(item => item.id === existingProperty.id ? property : item);
+                showAdminNotice('Property updated successfully.');
+            } else {
+                state.propertyListings = [property, ...state.propertyListings];
+                showAdminNotice('Property published successfully.');
+            }
+
+            savePropertyListings();
+            renderProperties(getFilteredListings());
+            renderAdminListings();
+            adminPropertyForm.reset();
+            adminSubmitBtn.textContent = 'Publish Property';
+            state.editingPropertyId = null;
+            showAdminTab('manage');
+        }
+
+        function renderAdminListings() {
+            adminListingCount.textContent = String(state.propertyListings.length);
+            adminListings.innerHTML = '';
+
+            state.propertyListings.forEach(property => {
+                const thumbnail = property.media.photos[0] || DEFAULT_PROPERTY_IMAGE;
+                const item = document.createElement('div');
+                item.className = 'rounded-xl border border-zinc-800 bg-zinc-900/70 p-4 flex flex-col gap-3';
+                item.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <img src="${thumbnail}" alt="${property.title}" class="h-20 w-24 rounded-lg object-cover border border-zinc-800" />
+                        <div class="flex-1 min-w-0">
+                            <p class="text-white font-semibold truncate">${property.title}</p>
+                            <p class="text-xs text-zinc-500 mt-1">${property.type} · ${property.status} · ${property.location}</p>
+                            <p class="text-xs text-zinc-400 mt-2 line-clamp-2">${property.description}</p>
+                        </div>
+                        <span class="text-xs uppercase tracking-widest text-red-400 font-bold shrink-0">${property.price}</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-[11px] text-zinc-400">
+                        <span class="rounded-full border border-zinc-800 px-2 py-1">${property.beds} Beds</span>
+                        <span class="rounded-full border border-zinc-800 px-2 py-1">${property.baths} Baths</span>
+                        <span class="rounded-full border border-zinc-800 px-2 py-1">${property.size}</span>
+                        <span class="rounded-full border border-zinc-800 px-2 py-1">${property.media.photos.length} Photos</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button data-admin-action="view" data-property-id="${property.id}" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:border-red-600 hover:text-white transition duration-200">View</button>
+                        <button data-admin-action="edit" data-property-id="${property.id}" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:border-red-600 hover:text-white transition duration-200">Edit</button>
+                        <button data-admin-action="remove" data-property-id="${property.id}" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:border-red-600 hover:text-white transition duration-200">Remove</button>
+                    </div>
+                `;
+                adminListings.appendChild(item);
+            });
+        }
+
+        function openAdminProperty(propertyId) {
+            const property = state.propertyListings.find(item => item.id === propertyId);
+            if (property) {
+                openPropertyModal(property);
+            }
+        }
+
+        function renderCategoryPillState() {
+            updateCategoryPills();
+        }
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+            renderProperties(getFilteredListings());
+            renderCategoryPillState();
+        }
+
+        function performHomeSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+
+            if (!query) {
+                homeSearchStatus.textContent = 'Type a property, location, or type to search.';
+                homeSearchStatus.className = 'min-h-[1.5rem] text-sm text-zinc-400';
+                renderProperties(getFilteredListings());
+                return;
+            }
+
+            const matches = state.propertyListings.filter(property => {
+                const haystack = [property.title, property.location, property.type, property.description, property.subcity, property.status].join(' ').toLowerCase();
+                return haystack.includes(query);
+            });
+
+            if (matches.length) {
+                homeSearchStatus.textContent = `Found ${matches.length} matching ${matches.length === 1 ? 'property' : 'properties'}.`;
+                homeSearchStatus.className = 'min-h-[1.5rem] text-sm text-emerald-400';
+                renderProperties(matches);
+                renderCategoryPillState();
+                window.setTimeout(highlightFirstListingCard, 50);
+                return;
+            }
+
+            homeSearchStatus.textContent = 'Sorry for now, but we will discover what you want. Coming soon.';
+            homeSearchStatus.className = 'min-h-[1.5rem] text-sm text-amber-400';
+            renderProperties([]);
+            renderCategoryPillState();
+        }
+
+        function toggleContactModalBackdrop() {
+            if (bookingModal.classList.contains('hidden') && adminPanel.classList.contains('translate-x-full') && adminLoginModal.classList.contains('hidden')) {
+                setBodyLocked(false);
+            }
+        }
+
+        filterBtn.addEventListener('click', performHomeSearch);
+        filterBtn.onclick = performHomeSearch;
+        searchInput.addEventListener('input', applyFilters);
+        searchInput.addEventListener('keyup', event => {
+            if (event.key === 'Enter') performHomeSearch();
+        });
+        subcityFilter.addEventListener('change', applyFilters);
+        typeFilter.addEventListener('change', applyFilters);
+
+        resetFiltersLink.addEventListener('click', () => {
+            searchInput.value = '';
+            subcityFilter.value = 'All';
+            typeFilter.value = 'All';
+            state.activeCategory = 'All';
+            homeSearchStatus.textContent = '';
+            renderCategoryPillState();
+            renderProperties(state.propertyListings);
+        });
+
+        propertyCategoryBar.addEventListener('click', event => {
+            const button = event.target.closest('[data-category]');
+            if (!button) return;
+            state.activeCategory = button.getAttribute('data-category') || 'All';
+            renderCategoryPillState();
+            renderProperties(getFilteredListings());
+        });
+
+        listingsGrid.addEventListener('click', event => {
+            const button = event.target.closest('[data-property-action]');
+            if (!button) return;
+            const propertyId = Number(button.getAttribute('data-property-id'));
+            const property = state.propertyListings.find(item => item.id === propertyId);
+            if (!property) return;
+
+            const action = button.getAttribute('data-property-action');
+            if (action === 'view') {
+                openPropertyModal(property);
+            }
+        });
+
+        detailsModalCloseBtn.addEventListener('click', closePropertyModal);
+        bookingModal.addEventListener('click', event => {
+            if (event.target === bookingModal) {
+                closePropertyModal();
+            }
+        });
+
+        adminLoginForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const username = adminUsername.value.trim();
+            const password = adminPassword.value.trim();
+
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                sessionStorage.setItem(ADMIN_SESSION_KEY, 'true');
+                state.adminLoggedIn = true;
+                closeAdminLoginModal();
+                showAdminPanelShell();
+            } else {
+                adminLoginError.classList.remove('hidden');
+            }
+        });
+
+        cancelAdminLoginBtn.addEventListener('click', closeAdminLoginModal);
+        adminLoginModal.addEventListener('click', event => {
+            if (event.target === adminLoginModal) closeAdminLoginModal();
+        });
+
+        if (openAdminPanelBtn) {
+            openAdminPanelBtn.addEventListener('click', showAdminPanelShell);
+        }
+        if (openAdminPanelNavBtn) {
+            openAdminPanelNavBtn.addEventListener('click', showAdminPanelShell);
+        }
+        closeAdminPanelBtn.addEventListener('click', closeAdminPanel);
+        backToSiteBtn.addEventListener('click', closeAdminPanel);
+        logoutAdminBtn.addEventListener('click', logoutAdmin);
+        adminBackdrop.addEventListener('click', closeAdminPanel);
+
+        postPropertyTabBtn.addEventListener('click', () => showAdminTab('post'));
+        manageListingsTabBtn.addEventListener('click', () => showAdminTab('manage'));
+
+        adminResetBtn.addEventListener('click', resetAdminForm);
+        adminPropertyForm.addEventListener('submit', handleAdminPropertySubmit);
+
+        adminListings.addEventListener('click', event => {
+            const button = event.target.closest('[data-admin-action]');
+            if (!button) return;
+
+            const propertyId = Number(button.getAttribute('data-property-id'));
+            const property = state.propertyListings.find(item => item.id === propertyId);
+            if (!property) return;
+
+            const action = button.getAttribute('data-admin-action');
+
+            if (action === 'view') {
+                openPropertyModal(property);
+            }
+
+            if (action === 'edit') {
+                populateAdminForm(property);
+                showAdminPanelShell();
+                showAdminTab('post');
+            }
+
+            if (action === 'remove') {
+                const confirmed = window.confirm(`Remove ${property.title}?`);
+                if (!confirmed) return;
+                state.propertyListings = state.propertyListings.filter(item => item.id !== propertyId);
+                savePropertyListings();
+                renderProperties(getFilteredListings());
+                renderAdminListings();
+                showAdminNotice('Property removed successfully.');
+            }
+        });
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                setTheme(document.body.dataset.theme === 'light' ? 'dark' : 'light');
+            });
+        }
+
+        // Amharic 'More' toggle for about section
+        const amharicMoreBtnEl = document.getElementById('amharicMoreBtn');
+        const amharicFullEl = document.getElementById('amharicFull');
+        if (amharicMoreBtnEl && amharicFullEl) {
+            amharicMoreBtnEl.addEventListener('click', () => {
+                const nowHidden = amharicFullEl.classList.toggle('hidden');
+                amharicMoreBtnEl.textContent = nowHidden ? 'More' : 'Less';
+            });
+        }
+
+        document.body.dataset.theme = loadTheme();
+        setTheme(document.body.dataset.theme);
+
+        propertyListings = state.propertyListings.map(normalizeProperty);
+        state.propertyListings = propertyListings;
+        savePropertyListings();
+
+        renderCategoryPillState();
+        renderProperties(getFilteredListings());
+        renderAdminListings();
+        showAdminTab('post');
+        closeAdminPanel();
+    </script>
+</body>
+</html>
