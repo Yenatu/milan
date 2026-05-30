@@ -684,7 +684,7 @@
                     </button>
                 </div>
             </div>
-            <div class="flex items-center gap-2 overflow-x-auto pb-1">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-x-auto pb-1">
                 <button id="signupTabBtn" class="user-tab-btn rounded-full bg-emerald-500 px-5 py-2 text-xs font-bold uppercase tracking-widest text-white">Sign Up</button>
                 <button id="signinTabBtn" class="user-tab-btn rounded-full border border-zinc-800 bg-zinc-950 px-5 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition">Sign In</button>
             </div>
@@ -697,12 +697,12 @@
                 <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 space-y-4">
                     <div>
                         <p class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Create Account</p>
-                        <p class="text-sm text-zinc-500 mt-1">Use email and password, or continue with Google to open your Google account for signup.</p>
+                        <p class="text-sm text-zinc-500 mt-1">Use email and password, or continue with Google to choose an account and return to Milan.</p>
                     </div>
 
-                    <a href="https://accounts.google.com/" target="_blank" rel="noreferrer" class="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 flex items-center justify-center gap-2">
+                    <a id="googleSignupBtn" href="https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fmilan-mu.vercel.app%2F%23signin" class="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 flex items-center justify-center gap-2">
                         <i class="fa-brands fa-google text-emerald-400"></i>
-                        Continue with Google
+                        Continue with Google to choose an account
                     </a>
 
                     <form id="userSignupForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
@@ -1150,9 +1150,9 @@
             if (!userAccessStatus || !userSignupSuccess) return;
 
             if (state.userProfile && state.userSignedIn) {
-                userAccessStatus.textContent = `Signed in as ${state.userProfile.fullName}. Your normal user session is active.`;
+                userAccessStatus.textContent = 'Your normal user session is active.';
                 userSignupSuccess.classList.remove('hidden');
-                userSignupSuccess.textContent = `Welcome, ${state.userProfile.fullName} · ${state.userProfile.email}`;
+                userSignupSuccess.textContent = `Account active · ${state.userProfile.email}`;
                 return;
             }
 
@@ -1272,30 +1272,10 @@
             state.userSignedIn = true;
             saveUserSession(true);
             updateUserAccessStatus();
-            showUserAccessNotice('Signin successful. Welcome back.', 'success');
+            showUserAccessNotice('Signin successful. Redirecting to the home page.', 'success');
             closeUserAccessPanel();
             setHashFragment('hero');
             heroEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        function handleUserSignupSubmit(event) {
-            event.preventDefault();
-
-            const profile = {
-                fullName: userFullName.value.trim(),
-                email: userEmail.value.trim().toLowerCase(),
-                phone: userPhone.value.trim(),
-                password: userPassword.value.trim()
-            };
-
-            state.userProfile = profile;
-            saveUserProfile(profile);
-            updateUserAccessStatus();
-            if (userSignupSuccess) {
-                userSignupSuccess.classList.remove('hidden');
-                userSignupSuccess.textContent = `Welcome, ${profile.fullName}. Your account is ready.`;
-            }
-            document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function updateCategoryPills() {
