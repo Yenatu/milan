@@ -182,6 +182,34 @@
             color: #111827 !important;
         }
 
+        body[data-theme="light"] #userAccessPanel,
+        body[data-theme="light"] #userAccessPanel .bg-zinc-950,
+        body[data-theme="light"] #userAccessPanel .bg-zinc-900,
+        body[data-theme="light"] #userAccessPanel .bg-zinc-900\/70,
+        body[data-theme="light"] #userAccessPanel .bg-zinc-900\/60,
+        body[data-theme="light"] #userAccessPanel .bg-zinc-950\/95,
+        body[data-theme="light"] #userAccessPanel .bg-black\/70,
+        body[data-theme="light"] #userAccessPanel .bg-black\/80,
+        body[data-theme="light"] #userAccessPanel .bg-\[\#0b0b0b\],
+        body[data-theme="light"] #userAccessPanel .bg-\[\#0b0b0b\]\/95 {
+            background-color: #ffffff !important;
+            color: #111827 !important;
+        }
+
+        body[data-theme="light"] #userAccessPanel .border-zinc-900,
+        body[data-theme="light"] #userAccessPanel .border-zinc-800,
+        body[data-theme="light"] #userAccessPanel .border-zinc-700 {
+            border-color: #d1d5db !important;
+        }
+
+        body[data-theme="light"] #userAccessPanel .text-white,
+        body[data-theme="light"] #userAccessPanel .text-zinc-300,
+        body[data-theme="light"] #userAccessPanel .text-zinc-400,
+        body[data-theme="light"] #userAccessPanel .text-zinc-500,
+        body[data-theme="light"] #userAccessPanel .text-zinc-600 {
+            color: #111827 !important;
+        }
+
         body[data-theme="light"] #adminPanel .bg-zinc-950,
         body[data-theme="light"] #adminPanel .bg-zinc-900,
         body[data-theme="light"] #adminPanel .bg-zinc-900\/70,
@@ -258,6 +286,16 @@
                 </button>
             </div>
             <div class="flex items-center gap-2 pl-0 sm:pl-2 sm:ml-1 sm:border-l sm:border-zinc-800">
+                <button id="openSignupNavBtn" type="button" class="nav-icon-link rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 flex items-center gap-2" aria-label="Open signup">
+                    <i class="fa-solid fa-user-plus text-emerald-400"></i>
+                    <span class="hidden sm:inline">Sign Up</span>
+                </button>
+                <button id="openSigninNavBtn" type="button" class="nav-icon-link rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-sky-500 hover:text-white transition duration-200 flex items-center gap-2" aria-label="Open signin">
+                    <i class="fa-solid fa-right-to-bracket text-sky-400"></i>
+                    <span class="hidden sm:inline">Sign In</span>
+                </button>
+            </div>
+            <div class="flex items-center gap-2 pl-0 sm:pl-2 sm:ml-1 sm:border-l sm:border-zinc-800">
                 <button id="openAdminPanelNavBtn" type="button" class="nav-icon-link bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded text-xs font-semibold uppercase tracking-widest transition duration-200 flex items-center gap-2" aria-label="Open admin panel">
                     <i class="fa-solid fa-user-shield"></i>
                     <span>Admin Panel</span>
@@ -328,94 +366,6 @@
             <p id="homeSearchStatus" class="min-h-[1.5rem] text-sm text-zinc-400"></p>
         </div>
     </header>
-
-    <!-- --- ACCESS CENTER --- -->
-    <section id="access" class="px-6 py-20">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl mb-10">
-                <p class="text-red-500 text-xs font-bold uppercase tracking-widest mb-2">Access Center</p>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">Separate access for new users and admins</h2>
-                <p class="text-zinc-400 mt-4 text-sm md:text-base leading-relaxed">
-                    New visitors can create a comfortable account to get started, while the admin area stays private and separate for property management.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6">
-                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 md:p-8 shadow-2xl shadow-black/30">
-                    <div class="flex items-start justify-between gap-4 mb-6">
-                        <div>
-                            <p class="text-xs uppercase tracking-[0.3em] text-emerald-400 font-semibold">New User</p>
-                            <h3 class="text-2xl font-bold text-white mt-1">Create your account</h3>
-                            <p class="text-sm text-zinc-400 mt-2">Join to save your name and get a smoother property browsing experience.</p>
-                        </div>
-                        <div class="h-12 w-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                            <i class="fa-solid fa-user-plus text-xl"></i>
-                        </div>
-                    </div>
-
-                    <form id="userSignupForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                        <div>
-                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Full Name</label>
-                            <input required id="userFullName" type="text" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="Your full name" />
-                        </div>
-                        <div>
-                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Email Address</label>
-                            <input required id="userEmail" type="email" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="you@example.com" />
-                        </div>
-                        <div>
-                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Phone Number</label>
-                            <input required id="userPhone" type="tel" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="09xxxxxxxx" />
-                        </div>
-                        <div>
-                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Password</label>
-                            <input required id="userPassword" type="password" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="Create a password" />
-                        </div>
-                        <div class="md:col-span-2 flex flex-col sm:flex-row gap-3 pt-2">
-                            <button type="submit" class="flex-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition duration-200">Sign Up</button>
-                            <button type="button" id="userAccessClearBtn" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition">Clear</button>
-                        </div>
-                    </form>
-
-                    <div class="mt-5 rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300 hidden" id="userSignupSuccess"></div>
-                    <div class="mt-5 rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-sm text-zinc-300" id="userAccessStatus">
-                        No account yet. Sign up to continue as a normal user.
-                    </div>
-                </div>
-
-                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 md:p-8 shadow-2xl shadow-black/30">
-                    <div class="flex items-start justify-between gap-4 mb-6">
-                        <div>
-                            <p class="text-xs uppercase tracking-[0.3em] text-red-500 font-semibold">Admin Only</p>
-                            <h3 class="text-2xl font-bold text-white mt-1">Private management access</h3>
-                            <p class="text-sm text-zinc-400 mt-2">Admins manage listings separately from normal user accounts.</p>
-                        </div>
-                        <div class="h-12 w-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
-                            <i class="fa-solid fa-user-shield text-xl"></i>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4 text-sm text-zinc-400">
-                        <div class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-                            <p class="text-white font-semibold mb-1">Normal users</p>
-                            <p>Browse homes, open details, and contact the owner without admin tools.</p>
-                        </div>
-                        <div class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-                            <p class="text-white font-semibold mb-1">Admins</p>
-                            <p>Use the private panel for posting, editing, and managing properties only.</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 flex flex-col gap-3">
-                        <button id="openAdminPanelAccessBtn" type="button" class="rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition duration-200 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-lock"></i>
-                            Open Admin Panel
-                        </button>
-                        <a href="#properties" class="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 text-center">Browse Properties</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- --- FEATURED LISTINGS GRID --- -->
     <main id="properties" class="max-w-7xl mx-auto px-6 py-20">
@@ -719,12 +669,102 @@
         </div>
     </div>
 
+    <!-- --- USER ACCESS DRAWER --- -->
+    <div id="userAccessPanel" class="fixed inset-y-0 right-0 z-50 w-full max-w-5xl translate-x-full bg-[#0b0b0b] border-l border-zinc-800 shadow-2xl shadow-black/60 transition-transform duration-300 ease-out overflow-y-auto">
+        <div class="sticky top-0 flex flex-col gap-4 border-b border-zinc-900 bg-[#0b0b0b]/95 backdrop-blur-md px-5 sm:px-6 py-4">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-emerald-400 font-semibold">User Access</p>
+                    <h3 class="text-2xl font-bold text-white mt-1">Sign up or sign in</h3>
+                    <p class="text-sm text-zinc-400 mt-2">Normal visitors use this private space to manage their own access.</p>
+                </div>
+                <div class="flex flex-wrap justify-end gap-2">
+                    <button id="closeUserAccessPanelBtn" class="h-10 w-10 rounded-full border border-zinc-800 text-zinc-400 hover:text-white hover:border-emerald-500 transition duration-200" aria-label="Close user access panel">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                <button id="signupTabBtn" class="user-tab-btn rounded-full bg-emerald-500 px-5 py-2 text-xs font-bold uppercase tracking-widest text-white">Sign Up</button>
+                <button id="signinTabBtn" class="user-tab-btn rounded-full border border-zinc-800 bg-zinc-950 px-5 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition">Sign In</button>
+            </div>
+        </div>
+
+        <div id="userAccessWorkspace" class="p-5 sm:p-6 space-y-6 hidden">
+            <div id="userAccessNotice" class="hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300"></div>
+
+            <section id="signupSection" class="space-y-4">
+                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 space-y-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Create Account</p>
+                        <p class="text-sm text-zinc-500 mt-1">Create a normal user account for browsing and contact access.</p>
+                    </div>
+
+                    <form id="userSignupForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Full Name</label>
+                            <input required id="userFullName" type="text" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="Your full name" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Email Address</label>
+                            <input required id="userEmail" type="email" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="you@example.com" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Phone Number</label>
+                            <input required id="userPhone" type="tel" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="09xxxxxxxx" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Password</label>
+                            <input required id="userPassword" type="password" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="Create a password" />
+                        </div>
+                        <div class="md:col-span-2 flex flex-col sm:flex-row gap-3 pt-2">
+                            <button type="submit" class="flex-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition duration-200">Sign Up</button>
+                            <button type="button" id="userAccessClearBtn" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="signinSection" class="hidden space-y-4">
+                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 space-y-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-sky-400 font-bold">Sign In</p>
+                        <p class="text-sm text-zinc-500 mt-1">Use your normal user email and password to access your account.</p>
+                    </div>
+
+                    <form id="userSigninForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="md:col-span-2">
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Email Address</label>
+                            <input required id="userSigninEmail" type="email" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-sky-500" placeholder="you@example.com" />
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Password</label>
+                            <input required id="userSigninPassword" type="password" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-sky-500" placeholder="Your password" />
+                        </div>
+                        <div class="md:col-span-2 flex flex-col sm:flex-row gap-3 pt-2">
+                            <button type="submit" class="flex-1 rounded-lg bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition duration-200">Sign In</button>
+                            <button type="button" id="userSigninToSignupBtn" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-sky-500 hover:text-white transition">Go to Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 space-y-3">
+                <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Account Status</p>
+                <p id="userAccessStatus" class="text-sm text-zinc-400">No account yet. Use Sign Up or Sign In above.</p>
+                <div id="userSignupSuccess" class="hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300"></div>
+            </section>
+        </div>
+    </div>
+
     <div id="adminBackdrop" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40"></div>
+    <div id="userAccessBackdrop" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40"></div>
 
     <!-- --- DOM CORE FUNCTIONAL JAVASCRIPT --- -->
     <script>
         const STORAGE_KEY = 'milan_real_estate_listings_v2';
         const USER_PROFILE_KEY = 'milan_user_profile_v1';
+        const USER_SESSION_KEY = 'milan_user_session_v1';
         const ADMIN_SESSION_KEY = 'milan_admin_session_v1';
         const ADMIN_USERNAME = 'milan';
         const ADMIN_PASSWORD = '1919';
@@ -735,6 +775,7 @@
         const state = {
             propertyListings: loadPropertyListings(),
             userProfile: loadUserProfile(),
+            userSignedIn: sessionStorage.getItem(USER_SESSION_KEY) === 'true',
             activeCategory: 'All',
             adminLoggedIn: sessionStorage.getItem(ADMIN_SESSION_KEY) === 'true',
             editingPropertyId: null,
@@ -766,7 +807,21 @@
         const userAccessClearBtn = document.getElementById('userAccessClearBtn');
         const userSignupSuccess = document.getElementById('userSignupSuccess');
         const userAccessStatus = document.getElementById('userAccessStatus');
-        const openAdminPanelAccessBtn = document.getElementById('openAdminPanelAccessBtn');
+        const userAccessPanel = document.getElementById('userAccessPanel');
+        const userAccessBackdrop = document.getElementById('userAccessBackdrop');
+        const userAccessWorkspace = document.getElementById('userAccessWorkspace');
+        const userAccessNotice = document.getElementById('userAccessNotice');
+        const closeUserAccessPanelBtn = document.getElementById('closeUserAccessPanelBtn');
+        const signupTabBtn = document.getElementById('signupTabBtn');
+        const signinTabBtn = document.getElementById('signinTabBtn');
+        const signupSection = document.getElementById('signupSection');
+        const signinSection = document.getElementById('signinSection');
+        const userSigninForm = document.getElementById('userSigninForm');
+        const userSigninEmail = document.getElementById('userSigninEmail');
+        const userSigninPassword = document.getElementById('userSigninPassword');
+        const userSigninToSignupBtn = document.getElementById('userSigninToSignupBtn');
+        const openSignupNavBtn = document.getElementById('openSignupNavBtn');
+        const openSigninNavBtn = document.getElementById('openSigninNavBtn');
 
         const bookingModal = document.getElementById('bookingModal');
         const modalPropertyTitle = document.getElementById('modalPropertyTitle');
@@ -1016,6 +1071,18 @@
             }
         }
 
+        function saveUserSession(isSignedIn) {
+            try {
+                if (isSignedIn) {
+                    sessionStorage.setItem(USER_SESSION_KEY, 'true');
+                } else {
+                    sessionStorage.removeItem(USER_SESSION_KEY);
+                }
+            } catch (error) {
+                window.__milanUserSession = isSignedIn;
+            }
+        }
+
         function savePropertyListings() {
             try {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(state.propertyListings));
@@ -1077,15 +1144,69 @@
         function updateUserAccessStatus() {
             if (!userAccessStatus || !userSignupSuccess) return;
 
-            if (state.userProfile) {
-                userAccessStatus.textContent = `Welcome back, ${state.userProfile.fullName}. Your normal user account is active.`;
+            if (state.userProfile && state.userSignedIn) {
+                userAccessStatus.textContent = `Signed in as ${state.userProfile.fullName}. Your normal user session is active.`;
                 userSignupSuccess.classList.remove('hidden');
-                userSignupSuccess.textContent = `Signed in as ${state.userProfile.fullName} · ${state.userProfile.email}`;
-            } else {
-                userAccessStatus.textContent = 'No account yet. Sign up to continue as a normal user.';
-                userSignupSuccess.classList.add('hidden');
-                userSignupSuccess.textContent = '';
+                userSignupSuccess.textContent = `Welcome, ${state.userProfile.fullName} · ${state.userProfile.email}`;
+                return;
             }
+
+            if (state.userProfile) {
+                userAccessStatus.textContent = `Account saved for ${state.userProfile.fullName}. Please sign in to continue.`;
+                userSignupSuccess.classList.remove('hidden');
+                userSignupSuccess.textContent = `Saved account · ${state.userProfile.email}`;
+                return;
+            }
+
+            userAccessStatus.textContent = 'No account yet. Use Sign Up or Sign In above.';
+            userSignupSuccess.classList.add('hidden');
+            userSignupSuccess.textContent = '';
+        }
+
+        function showUserAccessNotice(message, tone) {
+            if (!userAccessNotice) return;
+
+            userAccessNotice.className = tone === 'error'
+                ? 'rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300'
+                : 'rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300';
+            userAccessNotice.textContent = message;
+            userAccessNotice.classList.remove('hidden');
+        }
+
+        function clearUserAccessNotice() {
+            if (!userAccessNotice) return;
+            userAccessNotice.classList.add('hidden');
+            userAccessNotice.textContent = '';
+        }
+
+        function showUserAccessTab(tabName) {
+            const activeTab = tabName === 'signin' ? 'signin' : 'signup';
+            if (signupTabBtn && signinTabBtn) {
+                signupTabBtn.className = `user-tab-btn rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest transition ${activeTab === 'signup' ? 'bg-emerald-500 text-white' : 'border border-zinc-800 bg-zinc-950 text-zinc-300 hover:border-emerald-500 hover:text-white'}`;
+                signinTabBtn.className = `user-tab-btn rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest transition ${activeTab === 'signin' ? 'bg-sky-500 text-white' : 'border border-zinc-800 bg-zinc-950 text-zinc-300 hover:border-sky-500 hover:text-white'}`;
+            }
+            if (signupSection) {
+                signupSection.classList.toggle('hidden', activeTab !== 'signup');
+            }
+            if (signinSection) {
+                signinSection.classList.toggle('hidden', activeTab !== 'signin');
+            }
+        }
+
+        function showUserAccessPanel(tabName) {
+            userAccessPanel.classList.remove('translate-x-full');
+            userAccessBackdrop.classList.remove('hidden');
+            userAccessWorkspace.classList.remove('hidden');
+            showUserAccessTab(tabName);
+            clearUserAccessNotice();
+            setBodyLocked(true);
+        }
+
+        function closeUserAccessPanel() {
+            userAccessPanel.classList.add('translate-x-full');
+            userAccessBackdrop.classList.add('hidden');
+            setBodyLocked(false);
+            clearUserAccessNotice();
         }
 
         function resetUserSignupForm() {
@@ -1096,6 +1217,54 @@
                 userSignupSuccess.classList.add('hidden');
                 userSignupSuccess.textContent = '';
             }
+        }
+
+        function handleUserSignupSubmit(event) {
+            event.preventDefault();
+
+            const profile = {
+                fullName: userFullName.value.trim(),
+                email: userEmail.value.trim().toLowerCase(),
+                phone: userPhone.value.trim(),
+                password: userPassword.value.trim()
+            };
+
+            if (!profile.fullName || !profile.email || !profile.phone || !profile.password) {
+                showUserAccessNotice('Please complete all signup fields.', 'error');
+                return;
+            }
+
+            state.userProfile = profile;
+            state.userSignedIn = true;
+            saveUserProfile(profile);
+            saveUserSession(true);
+            updateUserAccessStatus();
+            showUserAccessNotice('Signup complete. Your normal user account is ready.', 'success');
+            userSigninEmail.value = profile.email;
+            userSigninPassword.value = '';
+            window.setTimeout(() => showUserAccessTab('signin'), 250);
+        }
+
+        function handleUserSigninSubmit(event) {
+            event.preventDefault();
+
+            if (!state.userProfile) {
+                showUserAccessNotice('No saved account found. Please sign up first.', 'error');
+                return;
+            }
+
+            const email = userSigninEmail.value.trim().toLowerCase();
+            const password = userSigninPassword.value.trim();
+
+            if (email !== state.userProfile.email || password !== state.userProfile.password) {
+                showUserAccessNotice('Invalid email or password. Try again.', 'error');
+                return;
+            }
+
+            state.userSignedIn = true;
+            saveUserSession(true);
+            updateUserAccessStatus();
+            showUserAccessNotice('Signin successful. Welcome back.', 'success');
         }
 
         function handleUserSignupSubmit(event) {
@@ -1486,7 +1655,7 @@
         }
 
         function toggleContactModalBackdrop() {
-            if (bookingModal.classList.contains('hidden') && adminPanel.classList.contains('translate-x-full') && adminLoginModal.classList.contains('hidden')) {
+            if (bookingModal.classList.contains('hidden') && adminPanel.classList.contains('translate-x-full') && adminLoginModal.classList.contains('hidden') && userAccessPanel.classList.contains('translate-x-full')) {
                 setBodyLocked(false);
             }
         }
@@ -1501,6 +1670,16 @@
         function handleHashNavigation() {
             if (window.location.hash === '#admin') {
                 showAdminPanelShell();
+                return;
+            }
+
+            if (window.location.hash === '#signup') {
+                showUserAccessPanel('signup');
+                return;
+            }
+
+            if (window.location.hash === '#signin') {
+                showUserAccessPanel('signin');
             }
         }
 
@@ -1574,14 +1753,20 @@
         if (openAdminPanelBtn) {
             openAdminPanelBtn.addEventListener('click', showAdminPanelShell);
         }
-        if (openAdminPanelNavBtn) {
-            openAdminPanelNavBtn.addEventListener('click', () => {
-                setHashFragment('admin');
-                showAdminPanelShell();
+        if (openSignupNavBtn) {
+            openSignupNavBtn.addEventListener('click', () => {
+                setHashFragment('signup');
+                showUserAccessPanel('signup');
             });
         }
-        if (openAdminPanelAccessBtn) {
-            openAdminPanelAccessBtn.addEventListener('click', () => {
+        if (openSigninNavBtn) {
+            openSigninNavBtn.addEventListener('click', () => {
+                setHashFragment('signin');
+                showUserAccessPanel('signin');
+            });
+        }
+        if (openAdminPanelNavBtn) {
+            openAdminPanelNavBtn.addEventListener('click', () => {
                 setHashFragment('admin');
                 showAdminPanelShell();
             });
@@ -1590,6 +1775,31 @@
         backToSiteBtn.addEventListener('click', closeAdminPanel);
         logoutAdminBtn.addEventListener('click', logoutAdmin);
         adminBackdrop.addEventListener('click', closeAdminPanel);
+
+        if (closeUserAccessPanelBtn) {
+            closeUserAccessPanelBtn.addEventListener('click', closeUserAccessPanel);
+        }
+        if (userAccessBackdrop) {
+            userAccessBackdrop.addEventListener('click', closeUserAccessPanel);
+        }
+        if (signupTabBtn) {
+            signupTabBtn.addEventListener('click', () => {
+                setHashFragment('signup');
+                showUserAccessPanel('signup');
+            });
+        }
+        if (signinTabBtn) {
+            signinTabBtn.addEventListener('click', () => {
+                setHashFragment('signin');
+                showUserAccessPanel('signin');
+            });
+        }
+        if (userSigninToSignupBtn) {
+            userSigninToSignupBtn.addEventListener('click', () => {
+                setHashFragment('signup');
+                showUserAccessPanel('signup');
+            });
+        }
 
         postPropertyTabBtn.addEventListener('click', () => showAdminTab('post'));
         manageListingsTabBtn.addEventListener('click', () => showAdminTab('manage'));
@@ -1600,15 +1810,25 @@
         if (userSignupForm) {
             userSignupForm.addEventListener('submit', handleUserSignupSubmit);
         }
+        if (userSigninForm) {
+            userSigninForm.addEventListener('submit', handleUserSigninSubmit);
+        }
         if (userAccessClearBtn) {
             userAccessClearBtn.addEventListener('click', () => {
                 state.userProfile = null;
+                state.userSignedIn = false;
                 try {
                     localStorage.removeItem(USER_PROFILE_KEY);
+                    sessionStorage.removeItem(USER_SESSION_KEY);
                 } catch (error) {
                     window.__milanUserProfile = null;
+                    window.__milanUserSession = false;
                 }
                 resetUserSignupForm();
+                if (userSigninForm) {
+                    userSigninForm.reset();
+                }
+                clearUserAccessNotice();
                 updateUserAccessStatus();
             });
         }
