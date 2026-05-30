@@ -706,9 +706,9 @@
                         </div>
                     </div>
 
-                    <a id="googleSignupBtn" href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmilan-mu.vercel.app%2F%23signin" target="_blank" rel="noreferrer" class="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 flex items-center justify-center gap-2 min-h-[48px]">
+                    <a id="googleSignupBtn" href="https://accounts.google.com/" target="_blank" rel="noreferrer" class="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 flex items-center justify-center gap-2 min-h-[48px]">
                         <i class="fa-brands fa-google text-emerald-400"></i>
-                        Continue with Google to choose an account
+                        Continue with Google
                     </a>
 
                     <form id="userSignupForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
@@ -1325,6 +1325,7 @@
 
             googleSignupBtn.className = 'min-h-[48px]';
             googleSignupBtn.removeAttribute('href');
+            googleSignupBtn.textContent = '';
 
             window.google.accounts.id.initialize({
                 client_id: GOOGLE_CLIENT_ID,
