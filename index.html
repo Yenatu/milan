@@ -252,13 +252,13 @@
                 </a>
             </div>
             <div class="flex items-center gap-2 pl-0 sm:pl-2 sm:ml-1 sm:border-l sm:border-zinc-800">
-                <button id="themeToggleBtn" class="nav-icon-link rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-amber-500 hover:text-white transition duration-200 flex items-center gap-2" aria-label="Toggle theme">
+                <button id="themeToggleBtn" type="button" class="nav-icon-link rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-amber-500 hover:text-white transition duration-200 flex items-center gap-2" aria-label="Toggle theme">
                     <i id="themeToggleIcon" class="fa-solid fa-moon text-amber-300"></i>
                     <span class="hidden sm:inline">Theme</span>
                 </button>
             </div>
             <div class="flex items-center gap-2 pl-0 sm:pl-2 sm:ml-1 sm:border-l sm:border-zinc-800">
-                <button id="openAdminPanelNavBtn" class="nav-icon-link bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded text-xs font-semibold uppercase tracking-widest transition duration-200 flex items-center gap-2" aria-label="Open admin panel">
+                <button id="openAdminPanelNavBtn" type="button" class="nav-icon-link bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded text-xs font-semibold uppercase tracking-widest transition duration-200 flex items-center gap-2" aria-label="Open admin panel">
                     <i class="fa-solid fa-user-shield"></i>
                     <span>Admin Panel</span>
                 </button>
@@ -1329,6 +1329,19 @@
             }
         }
 
+        function setHashFragment(fragment) {
+            const normalizedFragment = fragment.startsWith('#') ? fragment : `#${fragment}`;
+            if (window.location.hash !== normalizedFragment) {
+                history.pushState(null, '', normalizedFragment);
+            }
+        }
+
+        function handleHashNavigation() {
+            if (window.location.hash === '#admin') {
+                showAdminPanelShell();
+            }
+        }
+
         filterBtn.addEventListener('click', performHomeSearch);
         filterBtn.onclick = performHomeSearch;
         searchInput.addEventListener('input', applyFilters);
@@ -1400,7 +1413,10 @@
             openAdminPanelBtn.addEventListener('click', showAdminPanelShell);
         }
         if (openAdminPanelNavBtn) {
-            openAdminPanelNavBtn.addEventListener('click', showAdminPanelShell);
+            openAdminPanelNavBtn.addEventListener('click', () => {
+                setHashFragment('admin');
+                showAdminPanelShell();
+            });
         }
         closeAdminPanelBtn.addEventListener('click', closeAdminPanel);
         backToSiteBtn.addEventListener('click', closeAdminPanel);
@@ -1447,6 +1463,7 @@
         if (themeToggleBtn) {
             themeToggleBtn.addEventListener('click', () => {
                 setTheme(document.body.dataset.theme === 'light' ? 'dark' : 'light');
+                setHashFragment('theme');
             });
         }
 
@@ -1462,6 +1479,8 @@
 
         document.body.dataset.theme = loadTheme();
         setTheme(document.body.dataset.theme);
+        handleHashNavigation();
+        window.addEventListener('hashchange', handleHashNavigation);
 
         propertyListings = state.propertyListings.map(normalizeProperty);
         state.propertyListings = propertyListings;
