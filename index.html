@@ -706,7 +706,10 @@
                         </div>
                     </div>
 
-                    <div id="googleSignupBtn" class="min-h-[48px]"></div>
+                    <a id="googleSignupBtn" href="https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fmilan-mu.vercel.app%2F%23signin" class="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 flex items-center justify-center gap-2 min-h-[48px]" rel="noreferrer">
+                        <i class="fa-brands fa-google text-emerald-400"></i>
+                        Continue with Google to choose an account
+                    </a>
 
                     <form id="userSignupForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                         <div>
@@ -1317,9 +1320,11 @@
             if (googleIdentityReady || !window.google?.accounts?.id || !googleSignupBtn) return;
 
             if (!GOOGLE_CLIENT_ID || GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID') {
-                googleSignupBtn.innerHTML = '<div class="rounded-lg border border-dashed border-zinc-700 bg-zinc-900 px-4 py-3 text-xs uppercase tracking-widest text-zinc-500 text-center">Google sign-in is not configured yet</div>';
                 return;
             }
+
+            googleSignupBtn.className = 'min-h-[48px]';
+            googleSignupBtn.removeAttribute('href');
 
             window.google.accounts.id.initialize({
                 client_id: GOOGLE_CLIENT_ID,
