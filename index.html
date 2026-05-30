@@ -329,6 +329,94 @@
         </div>
     </header>
 
+    <!-- --- ACCESS CENTER --- -->
+    <section id="access" class="px-6 py-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-10">
+                <p class="text-red-500 text-xs font-bold uppercase tracking-widest mb-2">Access Center</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">Separate access for new users and admins</h2>
+                <p class="text-zinc-400 mt-4 text-sm md:text-base leading-relaxed">
+                    New visitors can create a comfortable account to get started, while the admin area stays private and separate for property management.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6">
+                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 md:p-8 shadow-2xl shadow-black/30">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-emerald-400 font-semibold">New User</p>
+                            <h3 class="text-2xl font-bold text-white mt-1">Create your account</h3>
+                            <p class="text-sm text-zinc-400 mt-2">Join to save your name and get a smoother property browsing experience.</p>
+                        </div>
+                        <div class="h-12 w-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <i class="fa-solid fa-user-plus text-xl"></i>
+                        </div>
+                    </div>
+
+                    <form id="userSignupForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Full Name</label>
+                            <input required id="userFullName" type="text" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="Your full name" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Email Address</label>
+                            <input required id="userEmail" type="email" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="you@example.com" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Phone Number</label>
+                            <input required id="userPhone" type="tel" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="09xxxxxxxx" />
+                        </div>
+                        <div>
+                            <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-1">Password</label>
+                            <input required id="userPassword" type="password" class="w-full bg-zinc-900 border border-zinc-800 rounded px-3 py-3 text-white focus:outline-none focus:border-emerald-500" placeholder="Create a password" />
+                        </div>
+                        <div class="md:col-span-2 flex flex-col sm:flex-row gap-3 pt-2">
+                            <button type="submit" class="flex-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition duration-200">Sign Up</button>
+                            <button type="button" id="userAccessClearBtn" class="flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition">Clear</button>
+                        </div>
+                    </form>
+
+                    <div class="mt-5 rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300 hidden" id="userSignupSuccess"></div>
+                    <div class="mt-5 rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-sm text-zinc-300" id="userAccessStatus">
+                        No account yet. Sign up to continue as a normal user.
+                    </div>
+                </div>
+
+                <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 md:p-8 shadow-2xl shadow-black/30">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-red-500 font-semibold">Admin Only</p>
+                            <h3 class="text-2xl font-bold text-white mt-1">Private management access</h3>
+                            <p class="text-sm text-zinc-400 mt-2">Admins manage listings separately from normal user accounts.</p>
+                        </div>
+                        <div class="h-12 w-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+                            <i class="fa-solid fa-user-shield text-xl"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-zinc-400">
+                        <div class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+                            <p class="text-white font-semibold mb-1">Normal users</p>
+                            <p>Browse homes, open details, and contact the owner without admin tools.</p>
+                        </div>
+                        <div class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+                            <p class="text-white font-semibold mb-1">Admins</p>
+                            <p>Use the private panel for posting, editing, and managing properties only.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex flex-col gap-3">
+                        <button id="openAdminPanelAccessBtn" type="button" class="rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition duration-200 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-lock"></i>
+                            Open Admin Panel
+                        </button>
+                        <a href="#properties" class="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:border-emerald-500 hover:text-white transition duration-200 text-center">Browse Properties</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- --- FEATURED LISTINGS GRID --- -->
     <main id="properties" class="max-w-7xl mx-auto px-6 py-20">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -636,6 +724,7 @@
     <!-- --- DOM CORE FUNCTIONAL JAVASCRIPT --- -->
     <script>
         const STORAGE_KEY = 'milan_real_estate_listings_v2';
+        const USER_PROFILE_KEY = 'milan_user_profile_v1';
         const ADMIN_SESSION_KEY = 'milan_admin_session_v1';
         const ADMIN_USERNAME = 'milan';
         const ADMIN_PASSWORD = '1919';
@@ -645,6 +734,7 @@
 
         const state = {
             propertyListings: loadPropertyListings(),
+            userProfile: loadUserProfile(),
             activeCategory: 'All',
             adminLoggedIn: sessionStorage.getItem(ADMIN_SESSION_KEY) === 'true',
             editingPropertyId: null,
@@ -668,6 +758,15 @@
         const aboutEl = document.getElementById('about');
         const heroSearchText = heroEl ? heroEl.innerText.toLowerCase() : '';
         const aboutSearchText = aboutEl ? aboutEl.innerText.toLowerCase() : '';
+        const userSignupForm = document.getElementById('userSignupForm');
+        const userFullName = document.getElementById('userFullName');
+        const userEmail = document.getElementById('userEmail');
+        const userPhone = document.getElementById('userPhone');
+        const userPassword = document.getElementById('userPassword');
+        const userAccessClearBtn = document.getElementById('userAccessClearBtn');
+        const userSignupSuccess = document.getElementById('userSignupSuccess');
+        const userAccessStatus = document.getElementById('userAccessStatus');
+        const openAdminPanelAccessBtn = document.getElementById('openAdminPanelAccessBtn');
 
         const bookingModal = document.getElementById('bookingModal');
         const modalPropertyTitle = document.getElementById('modalPropertyTitle');
@@ -898,6 +997,25 @@
             }
         }
 
+        function loadUserProfile() {
+            try {
+                const stored = localStorage.getItem(USER_PROFILE_KEY);
+                if (!stored) return null;
+                const parsed = JSON.parse(stored);
+                return parsed && parsed.fullName ? parsed : null;
+            } catch (error) {
+                return window.__milanUserProfile || null;
+            }
+        }
+
+        function saveUserProfile(profile) {
+            try {
+                localStorage.setItem(USER_PROFILE_KEY, JSON.stringify(profile));
+            } catch (error) {
+                window.__milanUserProfile = profile;
+            }
+        }
+
         function savePropertyListings() {
             try {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(state.propertyListings));
@@ -954,6 +1072,50 @@
             }
             adminNotice.classList.add('hidden');
             adminNotice.textContent = '';
+        }
+
+        function updateUserAccessStatus() {
+            if (!userAccessStatus || !userSignupSuccess) return;
+
+            if (state.userProfile) {
+                userAccessStatus.textContent = `Welcome back, ${state.userProfile.fullName}. Your normal user account is active.`;
+                userSignupSuccess.classList.remove('hidden');
+                userSignupSuccess.textContent = `Signed in as ${state.userProfile.fullName} · ${state.userProfile.email}`;
+            } else {
+                userAccessStatus.textContent = 'No account yet. Sign up to continue as a normal user.';
+                userSignupSuccess.classList.add('hidden');
+                userSignupSuccess.textContent = '';
+            }
+        }
+
+        function resetUserSignupForm() {
+            if (userSignupForm) {
+                userSignupForm.reset();
+            }
+            if (userSignupSuccess) {
+                userSignupSuccess.classList.add('hidden');
+                userSignupSuccess.textContent = '';
+            }
+        }
+
+        function handleUserSignupSubmit(event) {
+            event.preventDefault();
+
+            const profile = {
+                fullName: userFullName.value.trim(),
+                email: userEmail.value.trim().toLowerCase(),
+                phone: userPhone.value.trim(),
+                password: userPassword.value.trim()
+            };
+
+            state.userProfile = profile;
+            saveUserProfile(profile);
+            updateUserAccessStatus();
+            if (userSignupSuccess) {
+                userSignupSuccess.classList.remove('hidden');
+                userSignupSuccess.textContent = `Welcome, ${profile.fullName}. Your account is ready.`;
+            }
+            document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function updateCategoryPills() {
@@ -1418,6 +1580,12 @@
                 showAdminPanelShell();
             });
         }
+        if (openAdminPanelAccessBtn) {
+            openAdminPanelAccessBtn.addEventListener('click', () => {
+                setHashFragment('admin');
+                showAdminPanelShell();
+            });
+        }
         closeAdminPanelBtn.addEventListener('click', closeAdminPanel);
         backToSiteBtn.addEventListener('click', closeAdminPanel);
         logoutAdminBtn.addEventListener('click', logoutAdmin);
@@ -1428,6 +1596,22 @@
 
         adminResetBtn.addEventListener('click', resetAdminForm);
         adminPropertyForm.addEventListener('submit', handleAdminPropertySubmit);
+
+        if (userSignupForm) {
+            userSignupForm.addEventListener('submit', handleUserSignupSubmit);
+        }
+        if (userAccessClearBtn) {
+            userAccessClearBtn.addEventListener('click', () => {
+                state.userProfile = null;
+                try {
+                    localStorage.removeItem(USER_PROFILE_KEY);
+                } catch (error) {
+                    window.__milanUserProfile = null;
+                }
+                resetUserSignupForm();
+                updateUserAccessStatus();
+            });
+        }
 
         adminListings.addEventListener('click', event => {
             const button = event.target.closest('[data-admin-action]');
@@ -1481,6 +1665,7 @@
         setTheme(document.body.dataset.theme);
         handleHashNavigation();
         window.addEventListener('hashchange', handleHashNavigation);
+        updateUserAccessStatus();
 
         propertyListings = state.propertyListings.map(normalizeProperty);
         state.propertyListings = propertyListings;
